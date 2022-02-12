@@ -1,0 +1,437 @@
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL
+$ git init
+Initialized empty Git repository in D:/GIT TUTORIAL/.git/
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        My Website/
+        branches.txt
+        first-renamed.txt
+        info.txt
+        meet.docx
+        myExcel.xlsx
+        tut6-9.docx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git add .
+warning: adding embedded git repository: My Website
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> My Website
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached My Website
+hint:
+hint: See "git help submodule" for more information.
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git cm -m "Initial Commit"
+[master (root-commit) 651b40b] Initial Commit
+ 8 files changed, 396 insertions(+)
+ create mode 100644 .gitignore
+ create mode 160000 My Website
+ create mode 100644 branches.txt
+ create mode 100644 first-renamed.txt
+ create mode 100644 info.txt
+ create mode 100644 meet.docx
+ create mode 100644 myExcel.xlsx
+ create mode 100644 tut6-9.docx
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git add index.html
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git cm -m "added index.html"
+[master eea06c7] added index.html
+ 1 file changed, 12 insertions(+)
+ create mode 100644 index.html
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git add index.html
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git cm -m "added index.html title one"
+[master 724722f] added index.html title one
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git add index.html
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git cm -m "added index.html title two"
+[master f9e112a] added index.html title two
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git checkout -b features
+Switched to a new branch 'features'
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (features)
+$ git cm -a -m "feature title c4"
+[features e6b4a4a] feature title c4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (features)
+$ git cm -a -m "feature title c5"
+[features 4379d2a] feature title c5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (features)
+$ git cm -a -m "feature title c7"
+[features 4a07700] feature title c7
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (features)
+$ git status
+On branch features
+nothing to commit, working tree clean
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (features)
+$ git checkout master
+Switched to branch 'master'
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git cm -a -m "feature title c6"
+[master 83a6c99] feature title c6
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git merge feature
+merge: feature - not something we can merge
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git merge feature
+merge: feature - not something we can merge
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git checkout feature
+error: pathspec 'feature' did not match any file(s) known to git
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git merge features
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master|MERGING)
+$ git add .
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master|MERGING)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   index.html
+
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master|MERGING)
+$ git cm -m "merger fetures 1"
+[master bc773fe] merger fetures 1
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git log
+commit bc773fe6a9d1f7d2be0105e57c009d3b3beebe44 (HEAD -> master)
+Merge: 83a6c99 4a07700
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:18:50 2022 +0530
+
+    merger fetures 1
+
+commit 83a6c99a17f4060daaf3bf0844d3d3c97e1b31b2
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:13:06 2022 +0530
+
+    feature title c6
+
+commit 4a07700e35d8152c47d2ef99f088f38f82374f06 (features)
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:11:53 2022 +0530
+
+    feature title c7
+
+commit 4379d2ab4c76ad8b38df9b047b8b83bab4b37559
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:11:13 2022 +0530
+
+    feature title c5
+
+commit e6b4a4a9d6f346085afaf2978bece526be395bfa
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:10:13 2022 +0530
+
+    feature title c4
+
+commit f9e112ada02f21a435a62e94a143588c48c62182
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:07:55 2022 +0530
+
+    added index.html title two
+
+commit 724722f2e7f3d366907c626c352880d1217cb50f
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:07:20 2022 +0530
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git log
+commit bc773fe6a9d1f7d2be0105e57c009d3b3beebe44 (HEAD -> master)
+Merge: 83a6c99 4a07700
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:18:50 2022 +0530
+
+    merger fetures 1
+
+commit 83a6c99a17f4060daaf3bf0844d3d3c97e1b31b2
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:13:06 2022 +0530
+
+    feature title c6
+
+commit 4a07700e35d8152c47d2ef99f088f38f82374f06 (features)
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:11:53 2022 +0530
+
+    feature title c7
+
+commit 4379d2ab4c76ad8b38df9b047b8b83bab4b37559
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:11:13 2022 +0530
+
+    feature title c5
+
+commit e6b4a4a9d6f346085afaf2978bece526be395bfa
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:10:13 2022 +0530
+
+    feature title c4
+
+commit f9e112ada02f21a435a62e94a143588c48c62182
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:07:55 2022 +0530
+
+    added index.html title two
+
+commit 724722f2e7f3d366907c626c352880d1217cb50f
+Author: Meet <patelmeet1691@gmail.com>
+Date:   Fri Feb 11 18:07:20 2022 +0530
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch
+  features
+* master
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git checkout -b feature2
+Switched to a new branch 'feature2'
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (feature2)
+$ git add .
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (feature2)
+$ git cm -m "changed index.html in feature2"
+[feature2 2f48c08] changed index.html in feature2
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (feature2)
+$ git checout master
+git: 'checout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (feature2)
+$ git checkout master
+Switched to branch 'master'
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch
+  feature2
+  features
+* master
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git merge feature2
+Updating bc773fe..2f48c08
+Fast-forward
+ index.html | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git checkout feature2
+Switched to branch 'feature2'
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (feature2)
+$ git status
+On branch feature2
+nothing to commit, working tree clean
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (feature2)
+$ git checkout master
+Switched to branch 'master'
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch -v
+  feature2 2f48c08 changed index.html in feature2
+  features 4a07700 feature title c7
+* master   2f48c08 changed index.html in feature2
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch --merged
+  feature2
+  features
+* master
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch --no-merged
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch -d feature2
+Deleted branch feature2 (was 2f48c08).
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git checkout -b mj
+Switched to a new branch 'mj'
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (mj)
+$ git checkout master
+Switched to branch 'master'
+M       index.html
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch --merged
+  features
+* master
+  mj
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch --no-merged
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git checkout mj
+Switched to branch 'mj'
+M       index.html
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (mj)
+$ git cm -a -m "commited mj"
+[mj a6ae091] commited mj
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (mj)
+$ git checkout master
+Switched to branch 'master'
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch --no-merged
+  mj
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch --merged
+  features
+* master
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch -d mj
+error: The branch 'mj' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D mj'.
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch -d features
+Deleted branch features (was 4a07700).
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch -D mj
+Deleted branch mj (was a6ae091).
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch --merged
+* master
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$ git branch
+* master
+
+meet@LAPTOP-2D4RO9J1 MINGW64 /d/GIT TUTORIAL (master)
+$
